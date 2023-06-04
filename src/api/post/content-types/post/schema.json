@@ -1,0 +1,107 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "posts"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "posts"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "allowComments": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "isCommentsVisible": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "maxLength": 300,
+      "minLength": 32
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "full",
+        "leftbar",
+        "rightbar"
+      ],
+      "default": "rightbar",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "open",
+        "hidden",
+        "deleted"
+      ],
+      "default": "open",
+      "required": true
+    },
+    "commentStatus": {
+      "type": "enumeration",
+      "enum": [
+        "open",
+        "disabled",
+        "hidden"
+      ],
+      "required": true,
+      "default": "open"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "posts"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "minLength": 4
+    },
+    "post_interactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post-interaction.post-interaction",
+      "mappedBy": "post"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "post_analytics",
+  "info": {
+    "singularName": "post-analytic",
+    "pluralName": "post-analytics",
+    "displayName": "PostAnalytic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post"
+    },
+    "views": {
+      "type": "integer"
+    },
+    "uniqueViews": {
+      "type": "integer"
+    },
+    "likes": {
+      "type": "integer"
+    },
+    "shares": {
+      "type": "integer"
+    },
+    "averageRating": {
+      "type": "decimal"
+    },
+    "totalRatings": {
+      "type": "integer"
+    },
+    "comments": {
+      "type": "integer"
+    },
+    "bookmarks": {
+      "type": "integer"
+    }
+  }
+}

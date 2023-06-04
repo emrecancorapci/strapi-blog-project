@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "post_interactions",
+  "info": {
+    "singularName": "post-interaction",
+    "pluralName": "post-interactions",
+    "displayName": "PostInteraction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::post.post",
+      "inversedBy": "post_interactions"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "post_interactions"
+    },
+    "Rating": {
+      "type": "integer",
+      "max": 10,
+      "min": 1
+    },
+    "isLiked": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "isBookmarked": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

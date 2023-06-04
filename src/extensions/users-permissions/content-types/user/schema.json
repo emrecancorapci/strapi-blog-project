@@ -64,6 +64,46 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "author"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "biography": {
+      "type": "text"
+    },
+    "profileImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "twitterUsername": {
+      "type": "string"
+    },
+    "instagramUsername": {
+      "type": "string"
+    },
+    "linkedinUsername": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "lastLogin": {
+      "type": "datetime"
+    },
+    "post_interactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post-interaction.post-interaction",
+      "mappedBy": "users_permissions_user"
     }
   }
 }
