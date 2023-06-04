@@ -1,0 +1,30 @@
+{
+  "name": "strapi-blog-project",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/strapi": "4.10.7",
+    "@strapi/plugin-users-permissions": "4.10.7",
+    "@strapi/plugin-i18n": "4.10.7",
+    "pg": "8.8.0"
+  },
+  "author": {
+    "name": "Emre Can Çorapçı"
+  },
+  "strapi": {
+    "uuid": "d1a5035e-2244-4bc1-b7b8-6e27b24515ad"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
